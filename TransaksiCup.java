@@ -15,3 +15,25 @@ public class TransaksiCup {
 
         totalHarga = jumlahCup * hargaPerCup;
 
+        if (totalHarga >= 100000) {
+            diskon = totalHarga * 10 / 100;
+        }
+
+        totalBayar = totalHarga - diskon;
+
+        System.out.println("\n--- Rincian Transaksi ---");
+        System.out.println("Total Harga : " + totalHarga);
+        System.out.println("Diskon      : " + diskon);
+        System.out.println("Total Bayar : " + totalBayar);
+
+        if (uangBayar >= totalBayar) {
+            kembalian = uangBayar - totalBayar;
+            System.out.println("Kembalian   : " + kembalian);
+        } else {
+            kurang = totalBayar - uangBayar;
+            System.out.println("Uang tidak cukup, kurang Rp " + kurang);
+        }
+
+        input.close();
+    }
+}
